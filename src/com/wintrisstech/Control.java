@@ -6,6 +6,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.IOException;
+
+import static javax.imageio.ImageIO.read;
+
 /***********************************************************************************************
  * Main Contrtol Class
  ***********************************************************************************************/
@@ -42,7 +46,31 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
         gameWindow.getContentPane().setBackground(new Color(200, 235, 255));
         gameWindow.addKeyListener(this);
         gameWindow.setVisible(true);
+        {
+//            try
+//            {
+//                thomas.getThomasSpriteImageArray()[0] = read(getClass().getResource("Thomas1.png"));
+//                thomas.getThomasSpriteImageArray()[1] = read(getClass().getResource("Thomas2.png"));
+//                thomas.getThomasSpriteImageArray()[2] = read(getClass().getResource("Thomas3.png"));
+//                thomas.getThomasSpriteImageArray()[3] = read(getClass().getResource("Thomas4.png"));
+//                thomas.getThomasSpriteImageArray()[4] = read(getClass().getResource("Thomas5.png"));
+//                thomas.getThomasSpriteImageArray()[5] = read(getClass().getResource("Thomas6.png"));
+//                thomas.getThomasSpriteImageArray()[6] = read(getClass().getResource("Thomas7.png"));
+//                thomas.getThomasSpriteImageArray()[7] = read(getClass().getResource("Thomas8.png"));
+//                thomas.getReverseThomasImageArray()[0] = read(getClass().getResource("Reversed Thomas1.png"));
+//                thomas.getReverseThomasImageArray()[1] = read(getClass().getResource("Reversed Thomas2.png"));
+//                thomas.getReverseThomasImageArray()[2] = read(getClass().getResource("Reversed Thomas3.png"));
+//                thomas.getReverseThomasImageArray()[3] = read(getClass().getResource("Reversed Thomas4.png"));
+//                thomas.getReverseThomasImageArray()[4] = read(getClass().getResource("Reversed Thomas5.png"));
+//                thomas.getReverseThomasImageArray()[5] = read(getClass().getResource("Reversed Thomas6.png"));
+//                thomas.getReverseThomasImageArray()[6] = read(getClass().getResource("Reversed Thomas7.png"));
+//                thomas.getReverseThomasImageArray()[7] = read(getClass().getResource("Reversed Thomas8.png"));
+//            } catch (IOException e)
+//            {
+//                e.printStackTrace();
+//            }
 
+        }
     }
     public void drawThomas()
     {
