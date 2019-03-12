@@ -82,7 +82,7 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
     {
         Graphics2D g2 = (Graphics2D)g;
         g2.fillOval(100,100,100,100);
-//        g2.drawImage(thomas.getThomasSpriteImageArray()[0], 500,500, this);
+        g2.drawImage(thomas.getThomasSpriteImageArray()[0], 500,500, this);
     }
 
     @Override
