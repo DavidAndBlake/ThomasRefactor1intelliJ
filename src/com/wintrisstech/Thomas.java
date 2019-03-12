@@ -28,7 +28,7 @@ public class Thomas
 //            thomasSpriteImageArray[0] = read(getClass().getResource("/Users/davidfrieder/git/ThomasRefactor1/src/Thomas1.png"));
 //            thomasSpriteImageArray[1] = read(getClass().getResource("Thomas2.png"));
 //            thomasSpriteImageArray[2] = read(getClass().getResource("Thomas3.png"));
-            thomasSpriteImageArray[1] = ImageIO.read(new File("/Users/davidfrieder/git/ThomasRefactor1/src/pic1.PNG));
+            thomasSpriteImageArray[1] = ImageIO.read(new File("/Users/davidfrieder/git/ThomasRefactor1/src/Thomas1.png));
 //            thomasSpriteImageArray[3] = read(getClass().getResource("Thomas4.png"));
 //            thomasSpriteImageArray[4] = read(getClass().getResource("Thomas5.png"));
 //            thomasSpriteImageArray[5] = read(getClass().getResource("Thomas6.png"));

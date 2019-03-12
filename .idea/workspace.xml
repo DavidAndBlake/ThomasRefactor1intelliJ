@@ -3,13 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="80fe466c-08d5-489b-8e22-f6613bf5d81d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ThomasFebruary/com/wintrisstech/BackgroundObject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ThomasFebruary/com/wintrisstech/Control.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ThomasFebruary/com/wintrisstech/Ground.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ThomasFebruary/com/wintrisstech/Sky.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ThomasFebruary/com/wintrisstech/Thomas.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ThomasFebruary/com/wintrisstech/Track.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/wintrisstech/Control.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wintrisstech/Control.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/wintrisstech/Thomas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wintrisstech/Thomas.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -46,7 +39,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/wintrisstech/Thomas.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="329">
-              <caret line="30" column="62" selection-start-line="30" selection-start-column="62" selection-end-line="30" selection-end-column="62" />
+              <caret line="30" column="118" selection-start-line="30" selection-start-column="118" selection-end-line="30" selection-end-column="118" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -139,7 +132,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552420600413" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552424820616" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -284,7 +277,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/wintrisstech/Thomas.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
-          <caret line="30" column="62" selection-start-line="30" selection-start-column="62" selection-end-line="30" selection-end-column="62" />
+          <caret line="30" column="118" selection-start-line="30" selection-start-column="118" selection-end-line="30" selection-end-column="118" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
