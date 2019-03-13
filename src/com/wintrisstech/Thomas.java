@@ -25,26 +25,25 @@ public class Thomas
     {
         try
         {
-//            thomasSpriteImageArray[0] = read(getClass().getResource("/Users/davidfrieder/git/ThomasRefactor1/src/Thomas1.png"));
-//            thomasSpriteImageArray[1] = read(getClass().getResource("Thomas2.png"));
-//            thomasSpriteImageArray[2] = read(getClass().getResource("Thomas3.png"));
-            thomasSpriteImageArray[1] = ImageIO.read(new File("/Users/davidfrieder/git/ThomasRefactor1/src/Thomas1.png));
-//            thomasSpriteImageArray[3] = read(getClass().getResource("Thomas4.png"));
-//            thomasSpriteImageArray[4] = read(getClass().getResource("Thomas5.png"));
-//            thomasSpriteImageArray[5] = read(getClass().getResource("Thomas6.png"));
-//            thomasSpriteImageArray[6] = read(getClass().getResource("Thomas7.png"));
-//            thomasSpriteImageArray[7] = read(getClass().getResource("Thomas8.png"));
-//            reverseThomasImageArray[0] = read(getClass().getResource("ReversedThomas1.png"));
-//            reverseThomasImageArray[1] = read(getClass().getResource("ReversedThomas2.png"));
-//            reverseThomasImageArray[2] = read(getClass().getResource("ReversedThomas3.png"));
-//            reverseThomasImageArray[3] = read(getClass().getResource("ReversedThomas4.png"));
-//            reverseThomasImageArray[4] = read(getClass().getResource("ReversedThomas5.png"));
-//            reverseThomasImageArray[5] = read(getClass().getResource("ReversedThomas6.png"));
-//            reverseThomasImageArray[6] = read(getClass().getResource("ReversedThomas7.png"));
-//            reverseThomasImageArray[7] = read(getClass().getResource("ReversedThomas8.png"));
+            thomasSpriteImageArray[0] = ImageIO.read(new File("/Users/davidfrieder/git/ThomasRefactor1/src/Thomas1.png"));
+            thomasSpriteImageArray[1] = ImageIO.read(new File("/Users/davidfrieder/git/ThomasRefactor1/src/Thomas2.png"));
+            thomasSpriteImageArray[2] = ImageIO.read(new File("/Users/davidfrieder/git/ThomasRefactor1/src/Thomas3.png"));
+            thomasSpriteImageArray[3] = ImageIO.read(new File("/Users/davidfrieder/git/ThomasRefactor1/src/Thomas4.png"));
+            thomasSpriteImageArray[4] = ImageIO.read(new File("/Users/davidfrieder/git/ThomasRefactor1/src/Thomas5.png"));
+            thomasSpriteImageArray[5] = ImageIO.read(new File("/Users/davidfrieder/git/ThomasRefactor1/src/Thomas6.png"));
+            thomasSpriteImageArray[6] = ImageIO.read(new File("/Users/davidfrieder/git/ThomasRefactor1/src/Thomas7.png"));
+            thomasSpriteImageArray[7] = ImageIO.read(new File("/Users/davidfrieder/git/ThomasRefactor1/src/Thomas8.png"));
+            reverseThomasImageArray[0] = ImageIO.read(new File("ReversedThomas1.png"));
+            reverseThomasImageArray[1] = ImageIO.read(new File("ReversedThomas2.png"));
+            reverseThomasImageArray[2] = ImageIO.read(new File("ReversedThomas3.png"));
+            reverseThomasImageArray[3] = ImageIO.read(new File("ReversedThomas4.png"));
+            reverseThomasImageArray[4] = ImageIO.read(new File("ReversedThomas5.png"));
+            reverseThomasImageArray[5] = ImageIO.read(new File("ReversedThomas6.png"));
+            reverseThomasImageArray[6] = ImageIO.read(new File("ReversedThomas7.png"));
+            reverseThomasImageArray[7] = ImageIO.read(new File("ReversedThomas8.png"));
         } catch (IOException e)
         {
-            System.out.println("can't read the Thomas image");
+            System.out.println("Ln 47 can't read the Thomas image from thomas constructor");
         }
     }
 

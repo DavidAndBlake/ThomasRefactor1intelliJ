@@ -16,6 +16,7 @@ import static javax.imageio.ImageIO.read;
 public class Control extends JComponent implements ActionListener, Runnable, KeyListener
 {
    public Thomas thomas = new Thomas();
+   public Timer ticker = new Timer(20,this);
     Ground ground = new Ground();
     Track track = new Track();
     BackgroundObject backgroundObject = new BackgroundObject();
@@ -46,6 +47,7 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
         gameWindow.getContentPane().setBackground(new Color(200, 235, 255));
         gameWindow.addKeyListener(this);
         gameWindow.setVisible(true);
+        ticker.start();
         {
 //            try
 //            {
@@ -88,7 +90,9 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
     @Override
     public void actionPerformed(ActionEvent e)
     {
-
+//    if (ticker.){
+//
+//    }
     }
 
     @Override
@@ -100,6 +104,7 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
     @Override
     public void keyPressed(KeyEvent e)
     {
+//        KeyEvent.getKeyText(k);      //Trying to
 
     }
 
