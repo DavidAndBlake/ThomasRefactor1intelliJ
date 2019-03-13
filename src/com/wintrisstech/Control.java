@@ -16,11 +16,13 @@ import static javax.imageio.ImageIO.read;
 public class Control extends JComponent implements ActionListener, Runnable, KeyListener
 {
    public Thomas thomas = new Thomas();
-   public Timer ticker = new Timer(20,this);
+
     Ground ground = new Ground();
     Track track = new Track();
     BackgroundObject backgroundObject = new BackgroundObject();
     Sky backgroundSky = new Sky();
+    int thomasImageIndex = 0;
+    Timer ticker = new Timer(10,null);
     public static void main(String[] args)
     {
         System.out.println("ThomasFebruary" + "version 0.0, 1/25/19");
@@ -47,6 +49,7 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
         gameWindow.getContentPane().setBackground(new Color(200, 235, 255));
         gameWindow.addKeyListener(this);
         gameWindow.setVisible(true);
+
         ticker.start();
         {
 //            try
@@ -82,9 +85,13 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
 
     public void paint(Graphics g)
     {
+        if(thomasImageIndex > 7){
+            thomasImageIndex = 0;
+        }
         Graphics2D g2 = (Graphics2D)g;
         g2.fillOval(100,100,100,100);
-        g2.drawImage(thomas.getThomasSpriteImageArray()[0], 500,500, this);
+        g2.drawImage(thomas.getThomasSpriteImageArray()[thomasImageIndex], 500,500, this);
+        repaint();
     }
 
     @Override
@@ -104,7 +111,10 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
     @Override
     public void keyPressed(KeyEvent e)
     {
-//        KeyEvent.getKeyText(k);      //Trying to
+        if(e.getKeyCode() == KeyEvent.VK_LEFT && ticker.isRepeats()){
+            System.out.println(thomasImageIndex);
+    thomasImageIndex++;
+    }
 
     }
 
