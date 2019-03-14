@@ -4,6 +4,7 @@
     <list default="true" id="80fe466c-08d5-489b-8e22-f6613bf5d81d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/wintrisstech/Control.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wintrisstech/Control.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/wintrisstech/Thomas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wintrisstech/Thomas.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/wintrisstech/Control.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="503">
-              <caret line="113" column="65" lean-forward="true" selection-start-line="113" selection-start-column="65" selection-end-line="113" selection-end-column="65" />
+            <state relative-caret-position="658">
+              <caret line="50" column="32" lean-forward="true" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -38,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/wintrisstech/Thomas.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+            <state relative-caret-position="404">
+              <caret line="42" column="68" selection-start-line="42" selection-start-column="68" selection-end-line="42" selection-end-column="68" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,28 +115,35 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="ThomasRefactor1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ThomasRefactor1" type="462c0819:PsiDirectoryNode" />
+              <item name="ThomasRefactor1intelliJ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ThomasRefactor1intelliJ" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ThomasRefactor1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ThomasRefactor1" type="462c0819:PsiDirectoryNode" />
+              <item name="ThomasRefactor1intelliJ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ThomasRefactor1intelliJ" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ThomasRefactor1intelliJ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ThomasRefactor1intelliJ" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="wintrisstech" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552520771618" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552602465703" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -190,10 +198,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1680" height="975" extended-state="6" />
+    <frame x="0" y="24" width="1680" height="975" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15934066" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16117217" />
       <window_info id="Structure" order="1" side_tool="true" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -217,32 +225,31 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../ThomasRefactor/src/com/wintrisstech/Track.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../ThomasRefactor/src/com/wintrisstech/Track.java" />
     <entry file="file://$PROJECT_DIR$/ThomasFebruary.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Thomas5.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/javax/imageio/ImageIO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="1387" selection-start-line="1387" selection-end-line="1387" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/javax/imageio/ImageIO.java" />
     <entry file="file://$PROJECT_DIR$/src/ReversedThomas1.png">
       <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wintrisstech/Sky.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Thomas1.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/wintrisstech/Track.java">
+    <entry file="file://$PROJECT_DIR$/src/com/wintrisstech/BackgroundObject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -253,24 +260,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/wintrisstech/BackgroundObject.java">
+    <entry file="file://$PROJECT_DIR$/src/com/wintrisstech/Track.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/wintrisstech/Sky.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/wintrisstech/Thomas.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+        <state relative-caret-position="404">
+          <caret line="42" column="68" selection-start-line="42" selection-start-column="68" selection-end-line="42" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -279,8 +279,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/wintrisstech/Control.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="113" column="65" lean-forward="true" selection-start-line="113" selection-start-column="65" selection-end-line="113" selection-end-column="65" />
+        <state relative-caret-position="658">
+          <caret line="50" column="32" lean-forward="true" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
