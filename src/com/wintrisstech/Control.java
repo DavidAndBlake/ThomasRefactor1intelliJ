@@ -6,105 +6,140 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.io.IOException;
 
 import static javax.imageio.ImageIO.read;
 
 /***********************************************************************************************
  * Main Contrtol Class
+ *
+ * 4/1/19
+ * Having problems with wheel timing, need to make Thomas' wheels time with speedTicker. SpeedTicker is commented out right now
+ * Copyright David Frieder
  ***********************************************************************************************/
-public class Control extends JComponent implements ActionListener, Runnable, KeyListener {
+public class Control extends JComponent implements ActionListener, Runnable, KeyListener
+{
     public Thomas thomas = new Thomas();
-
     Ground ground = new Ground();
     Track track = new Track();
-    int thomasAnimationSpeed = 80;
     BackgroundObject backgroundObject = new BackgroundObject();
     Sky backgroundSky = new Sky();
     int thomasImageIndex = 0;
-    Timer thomasSpeedTicker = new Timer(50, this);
-    Timer animationTicker = new Timer(thomasAnimationSpeed,this);
+//    int thomasSpeed = 800;
+//    Timer speedTicker = new Timer(thomasSpeed, this);
+    Timer paintTicker = new Timer(50, this);
     boolean isThomasMovingLeft = false;
     boolean isThomasMovingRight = false;
 
-    public static void main(String[] args) {
-        System.out.println("ThomasFebruary" + "version 0.0, 1/25/19");
+    public static void main(String[] args)
+    {
+        System.out.println("ThomasFebruary" + "version 1.0, 3/17/19");
         SwingUtilities.invokeLater(new Control());
     }
+
     @Override
-    public void run() {
+    public void run()
+    {
         initializeGameWindow();
     }
 
     /***********************************************************************************************
      * Set up main JFrame
      ***********************************************************************************************/
-    private void initializeGameWindow() {
-        JFrame gameWindow = new JFrame("SuperGame");
-        gameWindow.setTitle("Thomas the tank");
+
+
+    private void initializeGameWindow()
+    {
+        JFrame gameWindow = new JFrame("Thomas the tank");
         gameWindow.setSize(Toolkit.getDefaultToolkit().getScreenSize().width, Toolkit.getDefaultToolkit().getScreenSize().height);
         gameWindow.add(this);// Adds the paint method to the JFrame
         gameWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         gameWindow.getContentPane().setBackground(new Color(200, 235, 255));
         gameWindow.addKeyListener(this);
         gameWindow.setVisible(true);
-        animationTicker.start();
+        paintTicker.start();
+//        speedTicker.start();
     }
 
-    public void drawThomas() {
+    public void drawThomas()
+    {
         thomas.getThomasSpriteImageArray();
         thomas.getReverseThomasImageArray();
     }
 
-    public void paint(Graphics g) {
-        if (thomasImageIndex > 7) {
-            thomasImageIndex = 0;
-        }
+    public void paint(Graphics g)
+    {
         Graphics2D g2 = (Graphics2D) g;
-        g2.fillOval(100, 100, 100, 100);
-        g2.drawImage(thomas.getThomasSpriteImageArray()[thomasImageIndex], 500, 500, this);
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        repaint();
-//        if(e.getSource() == (animationTicker)){
-//            thomasImageIndex++;
-//        }
-        if(isThomasMovingLeft == true){
-            System.out.println(thomasImageIndex);
-            thomasImageIndex++;
+        if (isThomasMovingLeft)
+        {
+            g2.drawImage(thomas.getThomasSpriteImageArray()[thomasImageIndex], 500, 500, this);
         }
-        if(isThomasMovingRight == true){
-            System.out.println(thomasImageIndex);
-            thomasImageIndex++;
+        if (isThomasMovingRight)
+        {
+            g2.drawImage(thomas.getReverseThomasImageArray()[thomasImageIndex], 500, 500, this);
         }
     }
 
     @Override
-    public void keyTyped(KeyEvent e) {
+    public void actionPerformed(ActionEvent e)
+    {
+        if (e.getSource() == paintTicker)
+        {
+            repaint();
+        }
+        if (isThomasMovingLeft == true){
+//            if (e.getSource() == speedTicker);
+            {
+                thomasImageIndex++;
+                if (thomasImageIndex > 7)
+                {
+                    thomasImageIndex = 0;
+                }
+            }
+        }
+        if (isThomasMovingRight == true){
+//            if (e.getSource() == speedTicker);
+            {
+                thomasImageIndex++;
+                if (thomasImageIndex > 7)
+                {
+                    thomasImageIndex = 0;
+                }
+            }
+        }
 
     }
 
     @Override
-    public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+    public void keyTyped(KeyEvent e)
+    {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e)
+    {
+        if (e.getKeyCode() == KeyEvent.VK_LEFT)
+        {
             isThomasMovingLeft = true;
             isThomasMovingRight = false;
         }
-        if (e.getKeyCode() == KeyEvent.VK_RIGHT){
+        if (e.getKeyCode() == KeyEvent.VK_RIGHT)
+        {
             isThomasMovingRight = true;
             isThomasMovingLeft = false;
         }
     }
 
     @Override
-    public void keyReleased(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+    public void keyReleased(KeyEvent e)
+    {
+        if (e.getKeyCode() == KeyEvent.VK_LEFT)
+        {
             isThomasMovingLeft = false;
         }
-        if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            isThomasMovingLeft = false;
+        if (e.getKeyCode() == KeyEvent.VK_RIGHT)
+        {
+            isThomasMovingRight = false;
         }
     }
 }
