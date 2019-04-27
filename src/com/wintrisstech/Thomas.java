@@ -13,6 +13,7 @@ public class Thomas
 {
     private Image[] thomasSpriteImageArray = new Image[8];
     private Image[] reverseThomasImageArray = new Image[8];
+    private Image[] arrowImages = new Image[3];
     private AffineTransform thomasTransform = new AffineTransform();
     private Image thomasSpriteImage;
     private Image reverseThomasImage;
@@ -41,6 +42,9 @@ public class Thomas
             reverseThomasImageArray[5] = ImageIO.read(new File("src/ReversedThomas6.png"));
             reverseThomasImageArray[6] = ImageIO.read(new File("src/ReversedThomas7.png"));
             reverseThomasImageArray[7] = ImageIO.read(new File("src/ReversedThomas8.png"));
+            arrowImages[0] = ImageIO.read(new File("src/Right arrow.png"));
+            arrowImages[1] = ImageIO.read(new File("src/Left arrow.png"));
+            arrowImages[2] = ImageIO.read(new File("src/Up arrow.png"));
         } catch (IOException e)
         {
             System.out.println("Ln 46 can't read the Thomas image from thomas constructor");
@@ -55,6 +59,10 @@ public class Thomas
     public Image[] getThomasSpriteImageArray()
     {
         return thomasSpriteImageArray;
+    }
+    public Image[] getArrowImages()
+    {
+        return arrowImages;
     }
 }
 

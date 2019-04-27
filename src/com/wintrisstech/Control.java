@@ -11,11 +11,12 @@ import static javax.imageio.ImageIO.read;
 
 /***********************************************************************************************
  * Main Contrtol Class
- *
- * 4/1/19
- * Having problems with wheel timing, need to make Thomas' wheels time with speedTicker. SpeedTicker is commented out right now
- * Copyright David Frieder
+ * 4/26/19
+ * Copyright David Frieder 2019
+ * Changed the nature of thomas's speed control
  ***********************************************************************************************/
+
+//TODO if the left key is pressed, the speed will increase, and right will decrease
 public class Control extends JComponent implements ActionListener, Runnable, KeyListener
 {
     public Thomas thomas = new Thomas();
@@ -24,11 +25,18 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
     BackgroundObject backgroundObject = new BackgroundObject();
     Sky backgroundSky = new Sky();
     int thomasImageIndex = 0;
-//    int thomasSpeed = 800;
-//    Timer speedTicker = new Timer(thomasSpeed, this);
-    Timer paintTicker = new Timer(50, this);
+    int thomasSpeed = 7;
+    Timer paintTicker = new Timer(20, this);
+    Timer thomasSpeedTicker = new Timer(thomasSpeed,this);
+    int tickerCounter;
     boolean isThomasMovingLeft = false;
     boolean isThomasMovingRight = false;
+    boolean isThomasFacingLeft = true;
+    boolean isThomasFacingRight = false;
+    boolean isThomasJumping = false;
+    int wheelMovementTimeInterval = 0;
+    Image thomasFacingForward = thomas.getThomasSpriteImageArray()[thomasImageIndex];
+    Image thomasFacingReversed = thomas.getReverseThomasImageArray()[thomasImageIndex];
 
     public static void main(String[] args)
     {
@@ -57,7 +65,7 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
         gameWindow.addKeyListener(this);
         gameWindow.setVisible(true);
         paintTicker.start();
-//        speedTicker.start();
+        thomasSpeedTicker.start();
     }
 
     public void drawThomas()
@@ -72,41 +80,44 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
         if (isThomasMovingLeft)
         {
             g2.drawImage(thomas.getThomasSpriteImageArray()[thomasImageIndex], 500, 500, this);
+            g2.scale(.5,.5);
+            g2.drawImage(thomas.getArrowImages()[1],700,400,this);
+        }
+        if (isThomasFacingLeft)
+        {
+            g2.drawImage(thomas.getThomasSpriteImageArray()[thomasImageIndex], 500, 500, this);
         }
         if (isThomasMovingRight)
         {
             g2.drawImage(thomas.getReverseThomasImageArray()[thomasImageIndex], 500, 500, this);
+            g2.scale(.5,.5);
+            g2.drawImage(thomas.getArrowImages()[0],700,400,this);
+
+        }
+        if (isThomasFacingRight)
+        {
+                g2.drawImage(thomas.getReverseThomasImageArray()[thomasImageIndex], 500, 500, this);
         }
     }
 
     @Override
     public void actionPerformed(ActionEvent e)
     {
-        if (e.getSource() == paintTicker)
-        {
-            repaint();
-        }
-        if (isThomasMovingLeft == true){
-//            if (e.getSource() == speedTicker);
-            {
-                thomasImageIndex++;
-                if (thomasImageIndex > 7)
-                {
-                    thomasImageIndex = 0;
-                }
-            }
-        }
-        if (isThomasMovingRight == true){
-//            if (e.getSource() == speedTicker);
-            {
-                thomasImageIndex++;
-                if (thomasImageIndex > 7)
-                {
-                    thomasImageIndex = 0;
-                }
-            }
-        }
 
+        System.out.println(wheelMovementTimeInterval);
+        if(e.getSource() == paintTicker){
+            repaint();
+            if (isThomasMovingLeft || isThomasMovingRight)
+            {
+                isThomasFacingLeft = false;
+                isThomasFacingRight = false;
+            }
+        }
+        wheelMovementTimeInterval = (wheelMovementTimeInterval + 1) % thomasSpeed;
+        if(wheelMovementTimeInterval == 0){
+            thomasImageIndex++;
+            thomasImageIndex = thomasImageIndex % 8;
+        }
     }
 
     @Override
@@ -122,11 +133,13 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
         {
             isThomasMovingLeft = true;
             isThomasMovingRight = false;
+            thomasSpeed ++;
         }
         if (e.getKeyCode() == KeyEvent.VK_RIGHT)
         {
             isThomasMovingRight = true;
             isThomasMovingLeft = false;
+            thomasSpeed --;
         }
     }
 
@@ -136,10 +149,14 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
         if (e.getKeyCode() == KeyEvent.VK_LEFT)
         {
             isThomasMovingLeft = false;
+            isThomasFacingLeft = true;
+            isThomasFacingRight = false;
         }
         if (e.getKeyCode() == KeyEvent.VK_RIGHT)
         {
             isThomasMovingRight = false;
+            isThomasFacingRight = true;
+            isThomasFacingLeft = false;
         }
     }
 }
