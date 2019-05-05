@@ -11,7 +11,7 @@ import static javax.imageio.ImageIO.read;
 
 /***********************************************************************************************
  * Main Contrtol Class
- * 4/26/19
+ * 5/5/19
  * Copyright David Frieder 2019
  * Changed the nature of thomas's speed control
  ***********************************************************************************************/
@@ -40,7 +40,7 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
 
     public static void main(String[] args)
     {
-        System.out.println("ThomasFebruary" + "version 1.0, 3/17/19");
+        System.out.println("ThomasFebruary" + "version 1.1, 5/5/19");
         SwingUtilities.invokeLater(new Control());
     }
 
@@ -82,6 +82,10 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
             g2.drawImage(thomas.getThomasSpriteImageArray()[thomasImageIndex], 500, 500, this);
             g2.scale(.5,.5);
             g2.drawImage(thomas.getArrowImages()[1],700,400,this);
+            thomasSpeed --;
+            if(thomasSpeed<2){
+                thomasSpeed++;
+            }
         }
         if (isThomasFacingLeft)
         {
@@ -92,7 +96,11 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
             g2.drawImage(thomas.getReverseThomasImageArray()[thomasImageIndex], 500, 500, this);
             g2.scale(.5,.5);
             g2.drawImage(thomas.getArrowImages()[0],700,400,this);
-
+            thomasSpeed ++;
+            if(thomasSpeed>200)
+            {
+                thomasSpeed--;
+            }
         }
         if (isThomasFacingRight)
         {
@@ -133,13 +141,12 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
         {
             isThomasMovingLeft = true;
             isThomasMovingRight = false;
-            thomasSpeed ++;
+
         }
         if (e.getKeyCode() == KeyEvent.VK_RIGHT)
         {
             isThomasMovingRight = true;
             isThomasMovingLeft = false;
-            thomasSpeed --;
         }
     }
 
