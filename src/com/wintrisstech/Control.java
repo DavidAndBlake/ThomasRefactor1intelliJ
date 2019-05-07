@@ -11,7 +11,7 @@ import static javax.imageio.ImageIO.read;
 
 /***********************************************************************************************
  * Main Contrtol Class
- * 5/5/19
+ * 5/6/19
  * Copyright David Frieder 2019
  * Changed the nature of thomas's speed control
  ***********************************************************************************************/
@@ -25,16 +25,17 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
     BackgroundObject backgroundObject = new BackgroundObject();
     Sky backgroundSky = new Sky();
     int thomasImageIndex = 0;
-    int thomasSpeed = 7;
+    double thomasSpeed = 7;
     Timer paintTicker = new Timer(20, this);
-    Timer thomasSpeedTicker = new Timer(thomasSpeed,this);
+    //    Timer thomasSpeedTicker = new Timer(thomasSpeed,this);
     int tickerCounter;
     boolean isThomasMovingLeft = false;
     boolean isThomasMovingRight = false;
     boolean isThomasFacingLeft = true;
     boolean isThomasFacingRight = false;
     boolean isThomasJumping = false;
-    int wheelMovementTimeInterval = 0;
+    double wheelMovementTimeInterval = 0;
+    double wheelIncrementor = 50;
     Image thomasFacingForward = thomas.getThomasSpriteImageArray()[thomasImageIndex];
     Image thomasFacingReversed = thomas.getReverseThomasImageArray()[thomasImageIndex];
 
@@ -65,7 +66,7 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
         gameWindow.addKeyListener(this);
         gameWindow.setVisible(true);
         paintTicker.start();
-        thomasSpeedTicker.start();
+//        thomasSpeedTicker.start();
     }
 
     public void drawThomas()
@@ -80,10 +81,12 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
         if (isThomasMovingLeft)
         {
             g2.drawImage(thomas.getThomasSpriteImageArray()[thomasImageIndex], 500, 500, this);
-            g2.scale(.5,.5);
-            g2.drawImage(thomas.getArrowImages()[1],700,400,this);
-            thomasSpeed --;
-            if(thomasSpeed<2){
+            g2.scale(.5, .5);
+            g2.drawImage(thomas.getArrowImages()[1], 700, 400, this);
+            wheelMovementTimeInterval = (wheelIncrementor += thomasSpeed) % 50; 
+            thomasSpeed--;
+            if (thomasSpeed < 2)
+            {
                 thomasSpeed++;
             }
         }
@@ -94,17 +97,18 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
         if (isThomasMovingRight)
         {
             g2.drawImage(thomas.getReverseThomasImageArray()[thomasImageIndex], 500, 500, this);
-            g2.scale(.5,.5);
-            g2.drawImage(thomas.getArrowImages()[0],700,400,this);
-            thomasSpeed ++;
-            if(thomasSpeed>200)
-            {
-                thomasSpeed--;
-            }
+            g2.scale(.5, .5);
+            g2.drawImage(thomas.getArrowImages()[0], 700, 400, this);
+            thomasSpeed+= .5; //The increment to thomas's speed that changes the value when arrow keys are pressed
+            wheelMovementTimeInterval = thomasSpeed/wheelIncrementor % 50; //started to get an idea involving using thomasSpeed % wheelMovementTimeInterval as a means of regulating the speed of thomas's wheels
+//            if (thomasSpeed > 50)
+//            {
+//                thomasSpeed--;
+//            }
         }
         if (isThomasFacingRight)
         {
-                g2.drawImage(thomas.getReverseThomasImageArray()[thomasImageIndex], 500, 500, this);
+            g2.drawImage(thomas.getReverseThomasImageArray()[thomasImageIndex], 500, 500, this);
         }
     }
 
@@ -112,19 +116,25 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
     public void actionPerformed(ActionEvent e)
     {
 
-        System.out.println(wheelMovementTimeInterval);
-        if(e.getSource() == paintTicker){
+//        System.out.println(wheelMovementTimeInterval);
+        if (e.getSource() == paintTicker)
+        {
             repaint();
             if (isThomasMovingLeft || isThomasMovingRight)
             {
                 isThomasFacingLeft = false;
                 isThomasFacingRight = false;
+                // 1/50 + thomasSpeed/50 % wheelMovementTimeInterval
+
+                System.out.println(thomasSpeed);
+                if (wheelMovementTimeInterval == 0)
+                {
+                    System.out.println("wheelMovementTimeInterval");
+                    thomasImageIndex++;
+                    thomasImageIndex = thomasImageIndex % 8;
+                }
             }
-        }
-        wheelMovementTimeInterval = (wheelMovementTimeInterval + 1) % thomasSpeed;
-        if(wheelMovementTimeInterval == 0){
-            thomasImageIndex++;
-            thomasImageIndex = thomasImageIndex % 8;
+
         }
     }
 
