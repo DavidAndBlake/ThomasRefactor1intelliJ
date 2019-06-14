@@ -20,9 +20,14 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
 {
     public Thomas thomas = new Thomas();
     int thomasSpeed = 7;
+    int acceleration;
     Timer paintTicker = new Timer(20, this);
     int pseudoThomasTicker;
+    int accelerationTicker;
     int paintTickerCounter = 0;
+    Image lastImage;
+    boolean isSpeedIncreasing;
+    boolean isSpeedDecreasing;
 
     public static void main(String[] args)
     {
@@ -59,32 +64,58 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
 
     public void paint(Graphics g)
     {
+        //TODO: DRAW A SINGLE THOMAS WHEEL ROTATING TO THOMAS'S RIGHT DISCONNECTED FROM THE MAIN BODY
         Graphics2D g2 = (Graphics2D) g;
-
-        if(thomasSpeed > 0){
-            g2.drawImage(thomas.getThomasSpriteImageArray()[pseudoThomasTicker], 500, 500, 500, 300, this);
+        if(thomasSpeed > 0)
+        {
+            g2.drawImage(thomas.getThomasSpriteImageArray()[pseudoThomasTicker], 500, 500, 500, 300, this); //this makes thomas face right
+            lastImage = thomas.getThomasSpriteImageArray()[pseudoThomasTicker];
         }
-        else{
-            g2.drawImage(thomas.getReverseThomasImageArray()[pseudoThomasTicker], 500, 500, 500, 300, this);
+        if(thomasSpeed < 0)
+        {
+            g2.drawImage(thomas.getReverseThomasImageArray()[pseudoThomasTicker], 500, 500, 500, 300, this); //this makes thomas face left
+            lastImage = thomas.getReverseThomasImageArray()[pseudoThomasTicker];
+        }
+        if(thomasSpeed == 0)
+        {
+                g2.drawImage(lastImage, 500, 500, 500, 300, this);
         }
     }
-    //TODO: MAKE THOMAS MOVE LEFT WHEN THE SPEED IS NEGATIVE
+
     @Override
     public void actionPerformed(ActionEvent e)
     {
         paintTickerCounter++;
-        if(thomasSpeed != 0){
+        if (thomasSpeed != 0)
+        {
             if (paintTickerCounter % (100 / thomasSpeed) == 0)
             {
                 pseudoThomasTicker++;
                 pseudoThomasTicker %= 8;
             }
-        }
-        else{
+        } else
+        {
             pseudoThomasTicker = 0;
+        }
+        if (acceleration != 0)
+        {
+            if (accelerationTicker % (100 / acceleration) == 0)
+            {
+                accelerationTicker++;
+                accelerationTicker %= 8;
+            }
+        } else
+        {
+            accelerationTicker = 0;
         }
         System.out.println(thomasSpeed);
         repaint();
+    }
+    public void setAcceleration(boolean isSpeedDecreasing, boolean isSpeedIncreasing)
+    {
+        if(isSpeedIncreasing){
+            thomasSpeed++;
+    }
     }
 
     @Override
@@ -98,14 +129,15 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
     {
         if (e.getKeyCode() == KeyEvent.VK_LEFT)
         {
-            thomasSpeed++;
+//            thomasSpeed++;
+            isSpeedIncreasing = true;
+            isSpeedDecreasing = false;
         }
         if (e.getKeyCode() == KeyEvent.VK_RIGHT)
         {
-            thomasSpeed--;
-        }
-        if (e.getKeyCode() == KeyEvent.VK_UP)
-        {
+//            thomasSpeed--;
+            isSpeedDecreasing = true;
+            isSpeedIncreasing = false;
         }
     }
 
@@ -114,5 +146,6 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
     {
 
     }
+
 }
 
