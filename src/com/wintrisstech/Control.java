@@ -116,11 +116,11 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
     {
         if (e.getKeyCode() == KeyEvent.VK_LEFT)
         {
-            thomasSpeed++;
+            thomasSpeed++; //This one increases thomas's speed
         }
         if (e.getKeyCode() == KeyEvent.VK_RIGHT)
         {
-            thomasSpeed--;
+            thomasSpeed--; //This decreases thomas's speed
         }
     }
 
