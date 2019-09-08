@@ -19,13 +19,15 @@ import static javax.imageio.ImageIO.read;
 public class Control extends JComponent implements ActionListener, Runnable, KeyListener
 {
     public Thomas thomas = new Thomas();
+    public GamePhysics physics = new GamePhysics();
     int thomasSpeed = 7;
     int acceleration;
     Timer paintTicker = new Timer(20, this);
-    int thomasSpeedTicker;
+    int thomasFrameNumber;
     int accelerationTicker;
     int paintTickerCounter = 0;
     Image lastImage;
+
 
     public static void main(String[] args)
     {
@@ -46,7 +48,7 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
     {
         JFrame gameWindow = new JFrame("Thomas the tank");
         gameWindow.setVisible(true);
-        gameWindow.setSize(Toolkit.getDefaultToolkit().getScreenSize().width, Toolkit.getDefaultToolkit().getScreenSize().height);
+        gameWindow.setSize( Toolkit.getDefaultToolkit().getScreenSize().width, Toolkit.getDefaultToolkit().getScreenSize().height);
         gameWindow.add(this);// Adds the paint method to the JFrame
         gameWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         gameWindow.getContentPane().setBackground(new Color(200, 235, 255));
@@ -66,13 +68,13 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
         Graphics2D g2 = (Graphics2D) g;
         if(thomasSpeed > 0)
         {
-            g2.drawImage(thomas.getThomasSpriteImageArray()[thomasSpeedTicker], 500, 500, 500, 300, this); //this makes thomas face right
-            lastImage = thomas.getThomasSpriteImageArray()[thomasSpeedTicker];
+            g2.drawImage(thomas.getThomasSpriteImageArray()[thomasFrameNumber], 500, 500, 500, 300, this); //this makes thomas face right
+            lastImage = thomas.getThomasSpriteImageArray()[thomasFrameNumber];
         }
         if(thomasSpeed < 0)
         {
-            g2.drawImage(thomas.getReverseThomasImageArray()[thomasSpeedTicker], 500, 500, 500, 300, this); //this makes thomas face left
-            lastImage = thomas.getReverseThomasImageArray()[thomasSpeedTicker];
+            g2.drawImage(thomas.getReverseThomasImageArray()[thomasFrameNumber], 500, 500, 500, 300, this); //this makes thomas face left
+            lastImage = thomas.getReverseThomasImageArray()[thomasFrameNumber];
         }
         if(thomasSpeed == 0)
         {
@@ -88,14 +90,14 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
         {
             if (paintTickerCounter % (100 / thomasSpeed) == 0)
             {
-                thomasSpeedTicker++;
-                thomasSpeedTicker %= 8;
+                thomasFrameNumber++;
+                thomasFrameNumber %= 8;
             }
         } else
         {
-            thomasSpeedTicker = 0;
+            thomasFrameNumber = 0;
         }
-        System.out.println("thomasSpeed = " + thomasSpeed  + " thomasSpeedTicker = " + thomasSpeedTicker);
+        System.out.println("thomasSpeed = " + thomasSpeed  + " thomasFrameNumber = " + thomasFrameNumber);
         repaint();
     }
     public void setAcceleration(boolean isSpeedDecreasing, boolean isSpeedIncreasing)

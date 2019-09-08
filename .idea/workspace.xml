@@ -7,10 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80fe466c-08d5-489b-8e22-f6613bf5d81d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/wintrisstech/GamePhysics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ThomasFebruary/com/wintrisstech/BackgroundObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ThomasFebruary/com/wintrisstech/BackgroundObject.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ThomasFebruary/com/wintrisstech/Control.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ThomasFebruary/com/wintrisstech/Control.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ThomasFebruary/com/wintrisstech/GamePhysics.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ThomasFebruary/com/wintrisstech/GamePhysics.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ThomasFebruary/com/wintrisstech/Ground.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ThomasFebruary/com/wintrisstech/Ground.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ThomasFebruary/com/wintrisstech/Sky.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ThomasFebruary/com/wintrisstech/Sky.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ThomasFebruary/com/wintrisstech/Thomas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ThomasFebruary/com/wintrisstech/Thomas.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ThomasFebruary/com/wintrisstech/Track.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ThomasFebruary/com/wintrisstech/Track.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/wintrisstech/Control.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wintrisstech/Control.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/wintrisstech/GamePhysics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/wintrisstech/GamePhysics.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,13 +32,17 @@
   <component name="CoverageViewManager">
     <option name="myElementSize" value="15" />
   </component>
+  <component name="ErrorTreeViewConfiguration">
+    <option name="hideWarnings" value="true" />
+    <option name="HIDE_WARNINGS" value="true" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/wintrisstech/Control.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="593">
-              <caret line="124" column="5" selection-start-line="124" selection-start-column="5" selection-end-line="124" selection-end-column="5" />
+            <state relative-caret-position="567">
+              <caret line="88" column="29" selection-start-line="88" selection-start-column="29" selection-end-line="88" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -39,20 +50,18 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/wintrisstech/GamePhysics.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="85" selection-start-line="6" selection-start-column="85" selection-end-line="6" selection-end-column="85" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/javax/swing/Timer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="592">
-              <caret line="312" selection-start-line="312" selection-end-line="312" />
+            <state relative-caret-position="749">
+              <caret line="54" column="5" lean-forward="true" selection-start-line="38" selection-start-column="4" selection-end-line="54" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#900#901#0" expanded="true" />
+                <element signature="e#1023#1024#0" expanded="true" />
+                <element signature="e#1317#1318#0" expanded="true" />
+                <element signature="e#1367#1368#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,7 +132,7 @@
       <find>syste</find>
       <find>paintTickerCounter</find>
       <find>thomas</find>
-      <find>thomas</find>
+      <find>paintticker</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -142,10 +151,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="123" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
     <option name="width" value="1680" />
-    <option name="height" value="974" />
+    <option name="height" value="978" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -180,13 +189,13 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561076299023" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1566315615235" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -241,24 +250,24 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="975" extended-state="6" />
+    <frame x="0" y="23" width="1680" height="978" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2002442" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23687424" />
       <window_info id="Structure" order="1" side_tool="true" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Run" order="0" visible="true" weight="0.23895809" />
+      <window_info anchor="bottom" id="Run" order="0" weight="0.23702031" />
       <window_info anchor="bottom" id="TODO" order="1" />
       <window_info anchor="bottom" id="Debug" order="2" weight="0.32918552" />
       <window_info anchor="bottom" id="Terminal" order="3" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="5" weight="0.3295583" />
-      <window_info anchor="bottom" id="Messages" order="6" weight="0.29218572" />
-      <window_info anchor="bottom" id="Find" order="7" weight="0.3280543" />
+      <window_info anchor="bottom" id="Messages" order="6" weight="0.29119638" />
+      <window_info anchor="bottom" id="Find" order="7" weight="0.32731378" />
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Ant Build" order="2" />
@@ -292,13 +301,7 @@
     <entry file="file://$PROJECT_DIR$/src/Thomas7.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/javax/swing/Timer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="312" selection-start-line="312" selection-end-line="312" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/javax/swing/Timer.java" />
     <entry file="file://$PROJECT_DIR$/src/com/wintrisstech/Track.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -337,19 +340,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/wintrisstech/GamePhysics.java">
+    <entry file="file://$PROJECT_DIR$/src/com/wintrisstech/Control.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="85" selection-start-line="6" selection-start-column="85" selection-end-line="6" selection-end-column="85" />
+        <state relative-caret-position="567">
+          <caret line="88" column="29" selection-start-line="88" selection-start-column="29" selection-end-line="88" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/wintrisstech/Control.java">
+    <entry file="file://$PROJECT_DIR$/src/com/wintrisstech/GamePhysics.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="593">
-          <caret line="124" column="5" selection-start-line="124" selection-start-column="5" selection-end-line="124" selection-end-column="5" />
+        <state relative-caret-position="749">
+          <caret line="54" column="5" lean-forward="true" selection-start-line="38" selection-start-column="4" selection-end-line="54" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#900#901#0" expanded="true" />
+            <element signature="e#1023#1024#0" expanded="true" />
+            <element signature="e#1317#1318#0" expanded="true" />
+            <element signature="e#1367#1368#0" expanded="true" />
           </folding>
         </state>
       </provider>
