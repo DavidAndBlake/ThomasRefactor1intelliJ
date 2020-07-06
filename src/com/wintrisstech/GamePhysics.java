@@ -1,15 +1,11 @@
 package com.wintrisstech;
 
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import javax.swing.Timer;
 
-public class GamePhysics implements ActionListener
+public class GamePhysics
 {
-    Timer accelerationTicker = new Timer(50, this); //This will control the rate of change in Thomas' acceleration
     boolean isGoingLeft;                                         //This is a copy of the boolean in the Control class
     boolean isGoingRight;                                        //This is a copy of the boolean in the Control class
     boolean isAcceleratingDueToGravity;
@@ -19,26 +15,23 @@ public class GamePhysics implements ActionListener
     int gravityAcceleration = 1;
     int thomasJumpingSpeed = 8;
 
-    GamePhysics()
-    {                  //This is the constructor
-        accelerationTicker.start(); //This starts the acceleration Ticker
-    }
 
-    void ThomasAcceleration(ActionEvent e)
+    void thomasAcceleration(ActionEvent e)
     {
-        if (isGoingLeft)
+        if (isGoingLeft && thomasSpeed > -100) //negativeSpeed makes Thomas move left
         {              //Boolean that checks whether Thomas is moving left
             thomasSpeed--;            //Change in Thomas' speed
         }
-        if (isGoingRight)
+        if (isGoingRight && thomasSpeed < 100) //positiveSpeed makes Thomas move right
         {             //Boolean that checks if Thomas is moving right
             thomasSpeed++;            //Changes Thomas' speed
         }
     }
 
-    public void getThomasSpeed()
+    public int getThomasSpeed()
     {
         int thomasSpeed = this.thomasSpeed;
+        return thomasSpeed;
     }
 
     void GravityAcceleration()
@@ -54,9 +47,9 @@ public class GamePhysics implements ActionListener
 
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e)
-    {
-        ThomasAcceleration(e);
-    }
+//    @Override
+//    public void actionPerformed(ActionEvent e)
+//    {
+//        thomasAcceleration(e);
+//    }
 }

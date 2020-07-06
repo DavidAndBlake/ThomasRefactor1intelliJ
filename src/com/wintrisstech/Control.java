@@ -11,27 +11,28 @@ import static javax.imageio.ImageIO.read;
 
 /***********************************************************************************************
  * Main Contrtol Class
- * 6/5/19
+ * 10/4/19
  * Copyright David Frieder 2019
  * Changed the nature of thomas's speed control
  ***********************************************************************************************/
 
 public class Control extends JComponent implements ActionListener, Runnable, KeyListener
 {
+    static String version = "version 10/4/19 A";
     public Thomas thomas = new Thomas();
     public GamePhysics physics = new GamePhysics();
     int thomasSpeed = 7;
     int acceleration;
-    Timer paintTicker = new Timer(20, this);
+    Timer paintTicker = new Timer(200, this);
     int thomasFrameNumber;
     int accelerationTicker;
     int paintTickerCounter = 0;
     Image lastImage;
-
+    GamePhysics gamePhysics = new GamePhysics();
 
     public static void main(String[] args)
     {
-        System.out.println("ThomasFebruary" + "version 1.1.1, 5/11/19");
+        System.out.println("Thomas" + version);
         SwingUtilities.invokeLater(new Control());
     }
 
@@ -85,13 +86,15 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
     @Override
     public void actionPerformed(ActionEvent e)
     {
-        paintTickerCounter++;
-        if (thomasSpeed != 0)
+        paintTickerCounter++; //sout shows painTickerCounter is increasing
+        if (thomasSpeed != 0) //thomasSpeed is != 0 when holding right arrow key
         {
+            System.out.println("painting");
             if (paintTickerCounter % (100 / thomasSpeed) == 0)
             {
                 thomasFrameNumber++;
                 thomasFrameNumber %= 8;
+                this.thomasSpeed = physics.getThomasSpeed();
             }
         } else
         {
@@ -99,12 +102,6 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
         }
         System.out.println("thomasSpeed = " + thomasSpeed  + " thomasFrameNumber = " + thomasFrameNumber);
         repaint();
-    }
-    public void setAcceleration(boolean isSpeedDecreasing, boolean isSpeedIncreasing)
-    {
-        if(isSpeedIncreasing){
-            thomasSpeed++;
-    }
     }
 
     @Override
@@ -118,7 +115,7 @@ public class Control extends JComponent implements ActionListener, Runnable, Key
     {
         if (e.getKeyCode() == KeyEvent.VK_LEFT)
         {
-            thomasSpeed++; //This one increases thomas's speed
+            thomasSpeed++; //This one increases thomas's speed  NEED TO FIGURE OUT HOW TO INCREMENT THOMAS'S SPEED ON A TIMER
         }
         if (e.getKeyCode() == KeyEvent.VK_RIGHT)
         {
